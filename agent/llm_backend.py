@@ -365,7 +365,12 @@ class LocalQwen3VLClient:
             return {"choices": [{"message": {"content": ""}}]}
 
         qwen_messages = normalize_messages_for_qwen(messages)
-        max_new_tokens = int(kwargs.pop("max_new_tokens", 512))
+        max_new_tokens = int(
+            kwargs.pop(
+                "max_new_tokens",
+                os.environ.get("VISUAL_SKETCHPAD_MAX_NEW_TOKENS", "512"),
+            )
+        )
         temperature = kwargs.pop("temperature", None)
         do_sample = bool(kwargs.pop("do_sample", False))
         generation_kwargs = {"max_new_tokens": max_new_tokens}

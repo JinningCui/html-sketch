@@ -4,7 +4,15 @@ import argparse, shutil
 
 from agent import SketchpadUserAgent
 from multimodal_conversable_agent import MultimodalConversableAgent
-from prompt import ReACTPrompt, MathPrompt, GeoPrompt, python_codes_for_images_reading, MULTIMODAL_ASSISTANT_MESSAGE 
+from prompt import (
+    ReACTPrompt,
+    MathPrompt,
+    GeoPrompt,
+    HTMLVisualPrompt,
+    python_codes_for_images_reading,
+    MULTIMODAL_ASSISTANT_MESSAGE,
+    HTML_VISUAL_ASSISTANT_MESSAGE,
+)
 from parse import Parser
 from execution import CodeExecutor
 from reflection import build_memory_prompt, reflect_and_update_memory
@@ -40,12 +48,12 @@ def run_agent(
     Args:
         task_input (str): a path to the task input directory
         output_dir (str): a path to the directory where the output will be saved
-        task_type (str): Task type. Should be vision, math, or geo. Defaults to "vision".
+        task_type (str): Task type. Should be vision, math, geo, or t2i_html. Defaults to "vision".
         task_name (str, optional): Only needed for math tasks. Defaults to None.
     """
     
-    # task type should be one of "vision", "math", "geo"
-    assert task_type in ["vision", "math", "geo"]
+    # task type should be one of "vision", "math", "geo", "t2i_html"
+    assert task_type in ["vision", "math", "geo", "t2i_html"]
     
     # create a directory for the task
     task_input = task_input.rstrip('/')
@@ -91,6 +99,34 @@ def run_agent(
         prompt_generator = GeoPrompt()
         parser = Parser()
         executor = CodeExecutor(working_dir=task_directory)
+
+    elif task_type == "t2i_html":
+        query_file = None
+        for candidate in ("request.json", "prompt.json", "example.json", "ex.json"):
+            candidate_path = os.path.join(task_input, candidate)
+            if os.path.exists(candidate_path):
+                query_file = candidate_path
+                break
+        if query_file is None:
+            raise FileNotFoundError(
+                "t2i_html tasks require request.json, prompt.json, example.json, or ex.json."
+            )
+
+        task_payload = json.load(open(query_file))
+        if isinstance(task_payload, dict):
+            query = (
+                task_payload.get("query")
+                or task_payload.get("prompt")
+                or task_payload.get("Prompt")
+                or task_payload.get("text")
+                or json.dumps(task_payload, ensure_ascii=False)
+            )
+        else:
+            query = str(task_payload)
+        images = []
+        prompt_generator = HTMLVisualPrompt()
+        parser = Parser()
+        executor = CodeExecutor(working_dir=task_directory)
     
     validate_llm_config(backend=backend)
     llm_runtime = build_llm_runtime_config(
@@ -121,7 +157,9 @@ def run_agent(
         human_input_mode='NEVER',
         max_consecutive_auto_reply=MAX_REPLY,
         is_termination_msg = lambda x: False,
-        system_message=MULTIMODAL_ASSISTANT_MESSAGE + build_memory_prompt(task_name),
+        system_message=(
+            HTML_VISUAL_ASSISTANT_MESSAGE if task_type == "t2i_html" else MULTIMODAL_ASSISTANT_MESSAGE
+        ) + build_memory_prompt(task_name),
         llm_config=False if llm_runtime.client is not None else None,
         llm_client=llm_runtime.client,
     )

@@ -1,5 +1,6 @@
 
 *outputs*/
+html_task_inputs/
 __pycache__/
 *.py[cod]
 *.log

@@ -22,6 +22,33 @@ Your reflection must be concise and operational. If the previous step looks soun
 If you think you get the answer to the intial user request, you can reply with "ANSWER: <your answer>" and ends with "TERMINATE".
 """
 
+HTML_VISUAL_ASSISTANT_MESSAGE = """You are a structured-vision reasoning planner for text-to-image prompts.
+Your job is to reason through a prompt using HTML visual drafts instead of generated images or JSON.
+You are coding in a Python jupyter notebook environment. Each ACTION must be one executable ```python``` block unless you are giving the final ANSWER.
+Do not generate intermediate images. Do not output JSON as the visual draft format.
+
+For each non-final turn:
+1. Start with REFLECTION. On the first turn, say this is the initial planning step.
+2. Then write THOUGHT with the current reasoning.
+3. Then write ACTION with Python code that writes a self-contained HTML file in the current working directory.
+
+Each HTML draft should function as a structured visual sketchpad:
+- include a visible title and the original prompt;
+- include a Thinking Text section explaining the reasoning step;
+- include an Objects / Entities section;
+- include an Attributes section when relevant;
+- include a Relations / Constraints section for spatial, causal, temporal, physical, cultural, or textual-image constraints;
+- include a Layout / Visual Draft section using semantic HTML, CSS boxes, tables, and/or inline SVG arrows when useful;
+- include an Open Issues / Revision Targets section when uncertainty remains.
+
+The HTML must be human-readable and self-contained. Use escaped text when embedding user content.
+The code should print the written HTML path and a compact textual summary of what the draft contains.
+
+Use local revision rather than regenerating the whole plan when the previous draft only needs a focused fix.
+If you have enough confidence, reply with:
+ANSWER: <final T2I generative prompt or final reasoning result> TERMINATE
+"""
+
 
 
 
@@ -415,6 +442,66 @@ def python_codes_for_images_reading(image_paths):
         code += f"""image_{idx+1} = Image.open("{path}").convert("RGB")\n"""
         
     return code
+
+
+class HTMLVisualPrompt:
+    """Prompt generator for StruVis-style HTML visual drafts.
+
+    This keeps the VisualSketchpad planner/executor loop but replaces
+    intermediate image/JSON sketches with self-contained HTML artifacts.
+    """
+
+    def initial_prompt(self, query: str, n_images: int = 0) -> str:
+        return f"""# USER REQUEST #
+{query}
+
+# GOAL #
+Reason about this text-to-image generation request using StruVis-style thinking:
+1. Decompose the prompt into explicit and hidden visual constraints.
+2. Build an HTML structured-vision draft, not JSON and not an image.
+3. Use the draft to check object coverage, attributes, relations, layout, physical/cultural/scientific consistency, and text-image design constraints.
+4. Revise the HTML draft locally if needed.
+5. Finish with a final generative prompt suitable for a text-to-image model.
+
+# ACTION FORMAT #
+For every non-final step, return exactly one Python code block. The code must write an HTML file such as `visual_draft_step_0.html` and print:
+- HTML_DRAFT_PATH: <path>
+- HTML_DRAFT_SUMMARY: <short summary>
+
+# HTML DRAFT REQUIREMENTS #
+Use semantic HTML, CSS, and optional inline SVG. Do not use JSON as the draft representation.
+The HTML should make visual relationships inspectable through sections, diagrams, boxes, arrows, and labels.
+Prefer a compact but complete draft over a long narrative. Use the following sections when applicable:
+- Thinking Text
+- Objects / Entities
+- Attributes
+- Relations / Constraints
+- Layout / Visual Draft
+- Open Issues / Revision Targets
+
+# FINAL FORMAT #
+When the draft is complete, respond with `ANSWER: ... TERMINATE`.
+"""
+
+    def get_parsing_feedback(self, error_message: str, error_code: str) -> str:
+        return (
+            "OBSERVATION: The previous response did not contain one executable Python code block.\n"
+            f"Parser message: {error_message}\n"
+            "Continue with REFLECTION, THOUGHT, and exactly one ACTION code block that writes the HTML draft. "
+            "If the draft is complete, use ANSWER: ... TERMINATE."
+        )
+
+    def get_exec_feedback(self, exit_code: int, output: str) -> str:
+        if exit_code != 0:
+            return (
+                f"OBSERVATION: Execution error. Exit code: {exit_code}, Output:\n{output}\n"
+                "First provide REFLECTION on why the previous HTML-draft code failed, then generate the full corrected ACTION code block."
+            )
+        return (
+            f"OBSERVATION: Execution success. The output is as follows:\n{output}\n"
+            "Inspect the HTML draft path and summary. If the draft is incomplete or inconsistent, revise it locally in the next ACTION. "
+            "If it is sufficient, provide ANSWER: <final generative prompt> TERMINATE."
+        )
 
 
 

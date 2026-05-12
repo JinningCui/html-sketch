@@ -147,18 +147,20 @@ def _extract_json(text):
 
 
 def reflect_and_update_memory(task_name, task_input, structured_trace, output_dir, llm_client=None):
-    if task_name not in TASK_SPECS:
-        return None
-
     final_answer = structured_trace.get("final_answer")
     if not final_answer:
         return None
 
-    gold_raw = load_gold_label(task_name, Path(task_input))
-    gold = normalize_gold(task_name, gold_raw)
-    prediction = normalize_prediction(task_name, final_answer)
-    correct = compare_prediction(task_name, prediction, gold)
-    outcome = "correct" if correct else "incorrect"
+    if task_name in TASK_SPECS:
+        gold_raw = load_gold_label(task_name, Path(task_input))
+        gold = normalize_gold(task_name, gold_raw)
+        prediction = normalize_prediction(task_name, final_answer)
+        correct = compare_prediction(task_name, prediction, gold)
+        outcome = "correct" if correct else "incorrect"
+    else:
+        gold = None
+        prediction = final_answer
+        outcome = "unknown"
 
     client = llm_client or build_llm_client()
     response = client.create(
