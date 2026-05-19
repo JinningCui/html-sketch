@@ -9,9 +9,12 @@ from prompt import (
     MathPrompt,
     GeoPrompt,
     HTMLVisualPrompt,
+    JSONVisualPrompt,
+    DraftFormatPromptWrapper,
     python_codes_for_images_reading,
     MULTIMODAL_ASSISTANT_MESSAGE,
     HTML_VISUAL_ASSISTANT_MESSAGE,
+    JSON_VISUAL_ASSISTANT_MESSAGE,
 )
 from parse import Parser
 from execution import CodeExecutor
@@ -30,10 +33,29 @@ def checks_terminate_message(msg):
         raise NotImplementedError
 
 
+def _wrap_prompt_generator(prompt_generator, task_type, draft_format):
+    if draft_format is None:
+        return prompt_generator
+    return DraftFormatPromptWrapper(prompt_generator, task_type=task_type, draft_format=draft_format)
+
+
+def _resolve_system_message(task_type, draft_format):
+    if draft_format == "html":
+        return HTML_VISUAL_ASSISTANT_MESSAGE
+    if draft_format == "json":
+        return JSON_VISUAL_ASSISTANT_MESSAGE
+    if task_type == "t2i_html":
+        return HTML_VISUAL_ASSISTANT_MESSAGE
+    if task_type == "t2i_json":
+        return JSON_VISUAL_ASSISTANT_MESSAGE
+    return MULTIMODAL_ASSISTANT_MESSAGE
+
+
 def run_agent(
     task_input,
     output_dir,
     task_type="vision",
+    draft_format=None,
     task_name=None,
     backend=None,
     model=None,
@@ -48,12 +70,14 @@ def run_agent(
     Args:
         task_input (str): a path to the task input directory
         output_dir (str): a path to the directory where the output will be saved
-        task_type (str): Task type. Should be vision, math, geo, or t2i_html. Defaults to "vision".
+        task_type (str): Task type. Should be vision, math, geo, t2i_html, or t2i_json. Defaults to "vision".
+        draft_format (str, optional): Intermediate draft format for standard tasks. One of None, "html", or "json".
         task_name (str, optional): Only needed for math tasks. Defaults to None.
     """
     
-    # task type should be one of "vision", "math", "geo", "t2i_html"
-    assert task_type in ["vision", "math", "geo", "t2i_html"]
+    # task type should be one of "vision", "math", "geo", "t2i_html", "t2i_json"
+    assert task_type in ["vision", "math", "geo", "t2i_html", "t2i_json"]
+    assert draft_format in [None, "html", "json"]
     
     # create a directory for the task
     task_input = task_input.rstrip('/')
@@ -76,7 +100,7 @@ def run_agent(
         query = task_metadata['query']
         images = task_metadata['images']
     
-        prompt_generator = ReACTPrompt()
+        prompt_generator = _wrap_prompt_generator(ReACTPrompt(), task_type="vision", draft_format=draft_format)
         parser = Parser()
         executor = CodeExecutor(working_dir=task_directory, use_vision_tools=True)
         
@@ -89,18 +113,18 @@ def run_agent(
     elif task_type == "math":
         query = json.load(open(os.path.join(task_input, "example.json")))
         images = []
-        prompt_generator = MathPrompt(task_name)
+        prompt_generator = _wrap_prompt_generator(MathPrompt(task_name), task_type="math", draft_format=draft_format)
         parser = Parser()
         executor = CodeExecutor(working_dir=task_directory)
         
     elif task_type == "geo":
         query = json.load(open(os.path.join(task_input, "ex.json")))
         images = []
-        prompt_generator = GeoPrompt()
+        prompt_generator = _wrap_prompt_generator(GeoPrompt(), task_type="geo", draft_format=draft_format)
         parser = Parser()
         executor = CodeExecutor(working_dir=task_directory)
 
-    elif task_type == "t2i_html":
+    elif task_type in {"t2i_html", "t2i_json"}:
         query_file = None
         for candidate in ("request.json", "prompt.json", "example.json", "ex.json"):
             candidate_path = os.path.join(task_input, candidate)
@@ -109,7 +133,7 @@ def run_agent(
                 break
         if query_file is None:
             raise FileNotFoundError(
-                "t2i_html tasks require request.json, prompt.json, example.json, or ex.json."
+                f"{task_type} tasks require request.json, prompt.json, example.json, or ex.json."
             )
 
         task_payload = json.load(open(query_file))
@@ -124,7 +148,7 @@ def run_agent(
         else:
             query = str(task_payload)
         images = []
-        prompt_generator = HTMLVisualPrompt()
+        prompt_generator = HTMLVisualPrompt() if task_type == "t2i_html" else JSONVisualPrompt()
         parser = Parser()
         executor = CodeExecutor(working_dir=task_directory)
     
@@ -157,9 +181,7 @@ def run_agent(
         human_input_mode='NEVER',
         max_consecutive_auto_reply=MAX_REPLY,
         is_termination_msg = lambda x: False,
-        system_message=(
-            HTML_VISUAL_ASSISTANT_MESSAGE if task_type == "t2i_html" else MULTIMODAL_ASSISTANT_MESSAGE
-        ) + build_memory_prompt(task_name),
+        system_message=_resolve_system_message(task_type, draft_format) + build_memory_prompt(task_name),
         llm_config=False if llm_runtime.client is not None else None,
         llm_client=llm_runtime.client,
     )
@@ -195,6 +217,7 @@ def run_agent(
         os.path.join(task_directory, "prediction_summary.json"),
         {
             "task_type": task_type,
+            "draft_format": draft_format,
             "task_name": task_name,
             "task_input": task_input,
             "final_answer": structured_trace.get("final_answer"),

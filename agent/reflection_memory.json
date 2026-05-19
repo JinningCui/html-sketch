@@ -661,798 +661,645 @@
             "entries": [
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/62",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/26",
                     "gold": false,
                     "prediction": false,
                     "outcome": "correct",
-                    "final_answer": "no, there is no path between the two nodes.",
+                    "final_answer": "no",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use programmatic methods like `networkx.has_path` to verify path existence before answering.",
-                        "Visualize graphs to confirm structural insights and validate programmatic results."
+                        "For graph connectivity tasks, verify node indices are within valid range and edges exist before calling path-checking functions.",
+                        "Always import required modules (like base64) before using them to avoid runtime errors.",
+                        "When generating visual drafts, ensure embedded assets (e.g., images) are properly encoded and referenced."
                     ],
-                    "notes": "The task was solved correctly using both programmatic checks and visualization, reinforcing the importance of dual validation methods.",
-                    "created_at": "2026-04-29T12:16:23.062355+00:00"
+                    "notes": "The task was solved correctly after fixing a missing import. The key insight is that isolated nodes (no edges) guarantee no path exists, which was correctly inferred.",
+                    "created_at": "2026-05-18T18:27:07.097823+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/63",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/27",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [6, 7, 2].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use both visualization and programmatic checks to confirm paths between nodes.",
-                        "When using libraries like `networkx`, verify results programmatically even if the visualization suggests an answer.",
-                        "For shortest path queries, explicitly compute and return the path to ensure clarity and correctness."
+                        "When generating visual drafts, validate critical dependencies before finalizing output.",
+                        "Final answer can be derived directly from draft if analysis is complete."
                     ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic validation, ensuring accuracy and clarity in the final answer.",
-                    "created_at": "2026-04-29T12:16:52.990394+00:00"
+                    "notes": "The task was correct but required fixing a missing import. Future tasks should validate imports and dependencies before execution, and confirm draft completeness before answering.",
+                    "created_at": "2026-05-18T18:29:12.516519+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/64",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/29",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML image embedding, always verify `base64` is imported before using `base64.b64encode`.",
+                        "When generating visual drafts, validate that all required libraries are imported before execution.",
+                        "If connectivity is confirmed via shortest_path, explicitly state the path in the output for traceability."
+                    ],
+                    "notes": "The run was correct but required a fix for a missing import. Future tasks should proactively validate dependencies and document paths for reproducibility.",
+                    "created_at": "2026-05-18T18:33:30.583731+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/3",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For graph connectivity tasks, verify path existence via `has_path` before computing shortest path to avoid unnecessary computation.",
+                        "Always include a visual draft when possible to validate reasoning and aid transparency.",
+                        "Final answer should be explicitly stated in the last step to ensure clarity and avoid ambiguity."
+                    ],
+                    "notes": "Task was correct and complete. No errors to correct, but insights extracted focus on efficiency, transparency, and clarity for future tasks.",
+                    "created_at": "2026-05-18T18:34:44.954222+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/31",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML generation, always verify required modules (like `html` and `base64`) are imported before use.",
+                        "When generating visual drafts, validate connectivity logic before finalizing answer.",
+                        "If draft confirms answer, terminate without further steps."
+                    ],
+                    "notes": "Task was correct but required iterative debugging. Future tasks should prioritize module imports and validation before finalizing output.",
+                    "created_at": "2026-05-18T18:39:06.243675+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/35",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML output, always verify `html.escape` and `base64` modules are imported before use.",
+                        "When embedding images from PIL, use `image.tobytes()` instead of `image.read()` to get raw image data.",
+                        "After fixing execution errors, validate output with a final reflection step before concluding."
+                    ],
+                    "notes": "The task was ultimately correct, but required iterative debugging. Future tasks should prioritize upfront module imports and image handling checks to avoid runtime errors.",
+                    "created_at": "2026-05-18T18:52:25.246329+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/37",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML embedding of images, verify `base64` is imported before using `base64.b64encode`.",
+                        "Always validate critical dependencies (like `networkx`, `matplotlib`, `base64`) before execution.",
+                        "After generating visual drafts, explicitly extract and confirm the final answer from the analysis before concluding."
+                    ],
+                    "notes": "The run was correct, but the fix for a missing import highlights a common pitfall. Future tasks should enforce dependency checks before execution.",
+                    "created_at": "2026-05-18T18:56:57.466714+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/39",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph connectivity tasks, verify path existence before reporting final answer.",
+                        "When generating HTML drafts, ensure all key outputs (matrix, nodes, path) are clearly labeled and accessible.",
+                        "Use `nx.has_path` and `nx.shortest_path` together to confirm connectivity and provide full context."
+                    ],
+                    "notes": "Task was correct; insights focus on operational best practices for future graph tasks.",
+                    "created_at": "2026-05-18T19:01:16.767247+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/4",
                     "gold": false,
                     "prediction": false,
                     "outcome": "correct",
-                    "final_answer": "no, there is no path between the two nodes.",
+                    "final_answer": "no",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use both programmatic checks and visual confirmation to ensure accuracy.",
-                        "When analyzing adjacency matrices, verify connected components to confirm path existence."
+                        "For graph connectivity queries, verify node degree before concluding path existence",
+                        "When using networkx, always validate input graph construction from adjacency matrix",
+                        "Final answer should explicitly match the output format required by the task"
                     ],
-                    "notes": "The approach combined computational checks with visualization, which is a robust method for graph-related tasks.",
-                    "created_at": "2026-04-29T12:17:15.547089+00:00"
+                    "notes": "Task was correct, but insights focus on preventing future edge cases (e.g., isolated nodes) and ensuring robustness in graph construction.",
+                    "created_at": "2026-05-18T19:02:16.584571+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/65",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/41",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [10, 8].",
+                    "final_answer": "yes.",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use programmatic methods like `networkx.has_path` to confirm visual observations.",
-                        "When visualizing graphs, ensure the visualization is supplemented with programmatic checks to avoid misinterpretation.",
-                        "For shortest path queries, validate connectivity first before attempting to compute the path."
+                        "For image embedding in HTML, verify `PIL.Image` object uses `.tobytes()` not `.read()`",
+                        "Always import required modules (e.g., `base64`) before using them in code blocks",
+                        "When generating visual drafts, validate output before finalizing answer"
                     ],
-                    "notes": "The task was solved correctly by combining visual inspection with programmatic validation, ensuring accuracy.",
-                    "created_at": "2026-04-29T12:17:44.628724+00:00"
+                    "notes": "The task was ultimately correct, but required two iterative fixes: missing import and incorrect PIL method. These are critical to avoid in future tasks.",
+                    "created_at": "2026-05-18T19:09:12.877948+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/66",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/45",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph visualization, verify available dependencies before using graphviz; fallback to spring_layout if pygraphviz is missing.",
+                        "Always confirm connectivity result with explicit path evidence if requested, even if only a yes/no is needed.",
+                        "When generating HTML drafts, ensure embedded images are base64-encoded and correctly referenced to avoid runtime errors."
+                    ],
+                    "notes": "Task was correct but required adaptive fallback strategy for visualization. Future tasks should preemptively check for missing packages and use robust, dependency-free alternatives.",
+                    "created_at": "2026-05-18T19:19:04.889410+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/48",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "When generating visual drafts, validate output via direct inspection of the draft’s content before finalizing the answer.",
+                        "For connectivity tasks, confirm path existence via `nx.has_path` and explicitly state 'no' if no path is found."
+                    ],
+                    "notes": "The task was correct but required a fix for a missing import. Future tasks should enforce import checks and draft validation before final answers.",
+                    "created_at": "2026-05-18T19:37:07.252624+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/49",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For graph connectivity tasks, verify node indices are 0-based before using them in graph functions.",
+                        "When generating HTML drafts, ensure all dynamic content (like paths) is properly escaped to avoid rendering issues.",
+                        "If the draft confirms connectivity, directly extract the answer without further computation."
+                    ],
+                    "notes": "Task was correct; no errors to correct. Insights focus on preventing future edge cases in graph indexing, HTML safety, and answer extraction efficiency.",
+                    "created_at": "2026-05-18T19:38:21.273129+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/5",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML drafts with base64-encoded images, verify `base64` is imported before encoding.",
+                        "When confirming connectivity via adjacency matrix, verify direct edge exists before concluding path exists.",
+                        "If draft generation succeeds, extract final answer directly from draft’s evidence section."
+                    ],
+                    "notes": "The task was correct, but the fix for the base64 import highlights a common dependency oversight. Future tasks should enforce import checks before using external modules.",
+                    "created_at": "2026-05-18T19:40:40.241086+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/51",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For visualization-heavy tasks, verify all required imports (e.g., base64) before generating output.",
+                        "When using graph libraries, always validate connectivity with nx.has_path before relying on shortest_path.",
+                        "Confirm direct adjacency or shortest path existence before concluding connectivity."
+                    ],
+                    "notes": "The task was correct but required fixing a missing import. Future safeguards should include pre-import checks for critical libraries and validating path existence before finalizing answers.",
+                    "created_at": "2026-05-18T19:45:41.562735+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/53",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML output, always verify required imports (like `html` and `base64`) before generating content.",
+                        "When extracting final answers from drafts, confirm the answer is explicitly stated in the evidence section.",
+                        "Use `nx.has_path` for connectivity checks and `nx.shortest_path` only if a path exists."
+                    ],
+                    "notes": "The task was correct, but the process revealed common pitfalls in HTML generation and answer extraction. These insights prevent similar mistakes in future tasks.",
+                    "created_at": "2026-05-18T19:49:43.571202+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/54",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "Verify connectivity result matches adjacency matrix structure before finalizing answer.",
+                        "Always validate graph visualization logic against query nodes before outputting."
+                    ],
+                    "notes": "Task was correct but required fixing a missing import. Future tasks should enforce dependency checks and validation against input structure.",
+                    "created_at": "2026-05-18T19:52:27.723922+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/55",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph connectivity tasks, verify the existence of a path using `nx.has_path` before retrieving the shortest path.",
+                        "Always embed actual graph visualizations (not placeholders) in HTML drafts to ensure accurate inspection.",
+                        "Conclude the answer only after confirming all required evidence (path sequence, visualization, connectivity result) is present."
+                    ],
+                    "notes": "The task was executed correctly with no errors. The insights focus on robustness and completeness in future graph tasks.",
+                    "created_at": "2026-05-18T20:07:58.835647+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/57",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For graph connectivity queries, verify direct adjacency first before computing paths.",
+                        "Embed visualizations in HTML drafts to validate connectivity visually and algorithmically.",
+                        "If adjacency matrix shows direct edge, conclude connectivity immediately without path computation."
+                    ],
+                    "notes": "Task was correct; insights focus on efficiency and verification patterns for future graph tasks.",
+                    "created_at": "2026-05-18T20:14:20.424958+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/58",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML image embedding, always verify `base64` is imported before encoding image bytes.",
+                        "Verify `nx.has_path` returns `False` for disconnected nodes before concluding 'no' connectivity.",
+                        "Always include path evidence (or 'No path found') in HTML draft for transparency."
+                    ],
+                    "notes": "The task was correct but required fixing a missing import. Future safeguards should include pre-checks for critical dependencies and output clarity.",
+                    "created_at": "2026-05-18T20:16:12.127938+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/60",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML output, always verify required imports (e.g., `html`, `base64`) before generating content.",
+                        "When generating visual drafts, validate that all dependencies are resolved before finalizing output.",
+                        "After generating intermediate outputs, cross-check the final answer against the computed result to avoid silent mismatches."
+                    ],
+                    "notes": "The task was ultimately correct, but required iterative debugging due to missing imports. Future tasks should enforce import validation early to prevent execution errors.",
+                    "created_at": "2026-05-18T20:25:01.372532+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/61",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML generation, always verify required imports (e.g., `html`, `base64`) are present before using their functions.",
+                        "When embedding data in HTML, use `html.escape` to prevent injection risks and ensure safe rendering.",
+                        "After generating visual drafts, verify the final answer is explicitly derived from the output (e.g., `nx.has_path` result) before concluding."
+                    ],
+                    "notes": "The task was ultimately correct, but required iterative debugging of missing imports. Future tasks should enforce import verification upfront to avoid runtime failures.",
+                    "created_at": "2026-05-18T20:27:30.122809+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/63",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For image embedding in HTML, always define and verify base64 encoding helper before generating output.",
+                        "Verify connectivity result is explicitly derived from graph traversal (e.g., `nx.has_path`) before finalizing answer.",
+                        "When generating HTML drafts, ensure all dependencies (like PIL) are imported to avoid runtime failures."
+                    ],
+                    "notes": "Task was correct but required defensive coding for image handling. Future tasks should auto-verify critical dependencies and output formats.",
+                    "created_at": "2026-05-18T20:34:04.040273+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/65",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For code execution, verify all helper functions are defined before they are called.",
+                        "When generating HTML with dynamic content, ensure all variables are resolved before template rendering.",
+                        "Always validate final answer extraction from intermediate outputs to avoid silent mismatches."
+                    ],
+                    "notes": "The task was correct but required fixing a function definition order error. Future tasks should enforce topological ordering of code elements and validate final output extraction.",
+                    "created_at": "2026-05-18T20:39:58.128055+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/67",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For image embedding in HTML, verify `image.tobytes()` is used instead of `.read()` for PIL Image objects.",
+                        "Always verify required modules (e.g., `base64`) are imported before using their functions.",
+                        "When generating visual drafts, confirm the final answer is explicitly derived from the computed result (e.g., `nx.has_path`) to avoid ambiguity."
+                    ],
+                    "notes": "The task was correct but required two iterative fixes: missing import and incorrect image byte retrieval. These are common pitfalls in PIL/Python workflows and should be pre-verified.",
+                    "created_at": "2026-05-18T20:45:37.868633+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/70",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML embedding, always verify required modules (e.g., `html`) are imported before using functions like `html.escape`.",
+                        "When generating visual drafts, validate the output format (e.g., base64 encoding, image embedding) before finalizing.",
+                        "Confirm connectivity logic (e.g., `nx.has_path`) aligns with query nodes and graph structure before concluding."
+                    ],
+                    "notes": "Task was correct but revealed dependency import and output validation gaps. Future steps should auto-check imports and output formats.",
+                    "created_at": "2026-05-18T20:56:59.510869+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/71",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML embedding, always verify `html.escape` is imported before using it.",
+                        "For PIL image encoding, use `.tobytes()` instead of `.read()` for in-memory images.",
+                        "After generating visual drafts, always validate connectivity logic and handle edge cases (e.g., no path) explicitly."
+                    ],
+                    "notes": "The task succeeded after iterative debugging. Key fixes were importing `html`, correcting image encoding, and ensuring path logic was complete.",
+                    "created_at": "2026-05-18T21:00:41.995837+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/74",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML drafts embedding images, verify all required modules (e.g., base64) are imported before use.",
+                        "When reasoning about graph connectivity, verify adjacency matrix is fully zero before concluding no path exists.",
+                        "If a draft confirms reasoning and answer, terminate without further steps."
+                    ],
+                    "notes": "Task was correct but required fixing a missing import. Future tasks should validate dependencies and edge cases early.",
+                    "created_at": "2026-05-18T21:07:15.224020+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/76",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "no",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML output, always verify `html` module import before using `html.escape`",
+                        "Verify connectivity result directly from `nx.has_path` before finalizing answer",
+                        "Use visualization only for confirmation, not as primary evidence for answer"
+                    ],
+                    "notes": "The task was solved correctly after fixing a missing import. Future tasks should enforce module imports and avoid over-reliance on visual aids for critical decisions.",
+                    "created_at": "2026-05-18T21:12:31.935677+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/77",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML generation, always verify required imports (e.g., `html` for `html.escape`) before execution.",
+                        "When generating visual evidence, ensure the visualization tool (e.g., `matplotlib`) is compatible with the output format (e.g., `PIL.Image`).",
+                        "Final answer should be grounded in algorithmic verification (e.g., `nx.has_path`) rather than visual inspection alone."
+                    ],
+                    "notes": "Task completed correctly; no error in final reasoning. Insights focus on preventing common import/compatibility issues and reinforcing algorithmic verification over visual intuition.",
+                    "created_at": "2026-05-18T21:14:33.412179+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/79",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes",
+                    "should_store": true,
+                    "insights": [
+                        "For HTML generation, verify all required modules (like `html`) are imported before use.",
+                        "Always cross-check the final output (e.g., `has_path` result) against the visual and textual evidence before answering.",
+                        "If a task involves multiple steps, ensure each step’s output is validated before proceeding to the next."
+                    ],
+                    "notes": "The run was correct, but the fix for the missing import highlights a common oversight in code generation. Future tasks should enforce module import checks before execution.",
+                    "created_at": "2026-05-18T21:17:44.005603+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/81",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "yes.",
+                    "should_store": true,
+                    "insights": [
+                        "For final answers, output plain text outside any code block.",
+                        "Verify syntax validity before executing code actions (e.g., avoid Python statements like 'ANSWER: ...' inside code blocks).",
+                        "Always confirm connectivity result before finalizing answer — double-check path existence and node indexing."
+                    ],
+                    "notes": "The task succeeded but required a syntax fix in the final step. Future tasks should enforce plain-text answer output and validate final answer logic before termination.",
+                    "created_at": "2026-05-18T21:25:28.354315+00:00"
+                },
+                {
+                    "task_name": "graph_connectivity",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/82",
                     "gold": false,
                     "prediction": false,
                     "outcome": "correct",
                     "final_answer": "no.",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, verify connectivity programmatically even if the visualization suggests an answer.",
-                        "Use graph visualization as a supplementary tool to confirm or understand programmatic results.",
-                        "When using libraries like `networkx`, ensure the adjacency matrix is correctly interpreted to avoid structural errors in the graph."
+                        "For visual output steps, verify file existence before embedding in HTML.",
+                        "Always import required modules (e.g., base64) before using them.",
+                        "Confirm final answer aligns with connectivity check result before concluding."
                     ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic verification, ensuring robustness in the result.",
-                    "created_at": "2026-04-29T12:18:09.865799+00:00"
+                    "notes": "The task was correct but required iterative debugging. Key safeguard: validate file presence before embedding.",
+                    "created_at": "2026-05-18T21:28:33.480232+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/67",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/85",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 11 and 9. The path is [11, 3, 9].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use programmatic checks like `networkx.has_path` to verify connectivity before reasoning.",
-                        "When determining paths in graphs, compute the shortest path programmatically using `networkx.shortest_path` for accuracy.",
-                        "Visualize graphs to aid reasoning, but rely on programmatic checks for definitive answers."
+                        "For HTML generation, always explicitly import `html` and `base64` before using their functions.",
+                        "Verify critical dependencies (like `nx.has_path`) are correctly imported and callable before finalizing output.",
+                        "When generating visual drafts, confirm the final answer is directly extractable from the draft content."
                     ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic checks. Insights focus on ensuring accuracy and leveraging tools effectively.",
-                    "created_at": "2026-04-29T12:18:38.881949+00:00"
+                    "notes": "The task was solved correctly after fixing missing imports. The key insight is proactive dependency verification to avoid runtime errors.",
+                    "created_at": "2026-05-18T21:35:35.643759+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/68",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between the two nodes.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use programmatic methods like `networkx.has_path` to verify paths before answering.",
-                        "Visualize graphs to confirm structural insights and cross-check programmatic results."
-                    ],
-                    "notes": "The task was solved correctly using both programmatic checks and visualization, ensuring accuracy.",
-                    "created_at": "2026-04-29T12:18:56.207623+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/69",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/87",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [7, 10].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, verify paths programmatically using a reliable library like `networkx` before answering.",
-                        "Visualize graphs to confirm structural insights before performing computational checks."
+                        "For image embedding in HTML, always use `base64.b64encode(image.tobytes()).decode('utf-8')` and wrap with `html.escape()` for safety.",
+                        "Verify algorithm correctness (e.g., `nx.has_path`) before finalizing answer, even if visualization is complete.",
+                        "If draft generation succeeds, confirm the answer is directly derivable from the computed result, not the visualization."
                     ],
-                    "notes": "The task was solved correctly, and the approach combined visualization and programmatic verification effectively.",
-                    "created_at": "2026-04-29T12:19:21.296303+00:00"
+                    "notes": "The task was correct but required a fix for base64 encoding. Future tasks should validate image embedding syntax and algorithmic correctness early.",
+                    "created_at": "2026-05-18T21:40:32.842984+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/7",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/89",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [6, 0, 9].",
+                    "final_answer": "yes.",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use programmatic checks (e.g., `networkx.has_path`) to confirm connections instead of relying solely on visual inspection.",
-                        "When visualizing graphs, ensure the visualization is supplemented with programmatic validation to avoid misinterpretation of complex structures."
+                        "For visual outputs, verify all required imports (e.g., base64) are present before embedding assets.",
+                        "Always validate connectivity results with explicit conditional logic before finalizing answer.",
+                        "Update HTML drafts incrementally with each step’s outcome to maintain traceability."
                     ],
-                    "notes": "The task was solved correctly, but the reliance on visualization before programmatic confirmation could lead to errors in more complex graphs.",
-                    "created_at": "2026-04-29T12:19:43.292316+00:00"
+                    "notes": "Task was correct but required iterative debugging. Future tasks should enforce import checks and result validation early.",
+                    "created_at": "2026-05-18T21:45:11.371614+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/70",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between node 4 and node 1.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use programmatic methods like `networkx.has_path` to verify connectivity before answering.",
-                        "When working with adjacency matrices, ensure the graph is correctly constructed using reliable libraries like `networkx` to avoid misinterpretation.",
-                        "Visualizing the graph can help confirm structural assumptions and identify potential errors in the input data."
-                    ],
-                    "notes": "The task was solved correctly using both programmatic verification and visualization, which reinforced the accuracy of the result.",
-                    "created_at": "2026-04-29T12:20:07.204801+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/71",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/9",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [3, 2].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use programmatic checks like `networkx.has_path` to confirm connections before answering.",
-                        "Visualize the graph structure to gain intuitive understanding before performing computational checks."
+                        "For HTML image embedding, verify `base64` import before encoding.",
+                        "Verify connectivity algorithm (e.g., `nx.has_path`) is correctly applied to query nodes.",
+                        "Confirm final answer matches both algorithmic result and visual evidence."
                     ],
-                    "notes": "The task was solved correctly, and the approach combined visualization and programmatic validation effectively.",
-                    "created_at": "2026-04-29T12:20:31.447784+00:00"
+                    "notes": "The task was correct but required fixing a missing import. Future tasks should validate dependencies and cross-check outputs with visual/algorithmic consistency.",
+                    "created_at": "2026-05-18T21:47:11.093906+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/72",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify node isolation or connected components before concluding.",
-                        "Use visualizations or adjacency matrix analysis to confirm graph structure when uncertain.",
-                        "For pathfinding, ensure both nodes belong to the same connected component before checking specific paths."
-                    ],
-                    "notes": "The task was solved correctly by leveraging graph visualization and connected component analysis. These methods are generalizable for similar tasks.",
-                    "created_at": "2026-04-29T12:20:56.215444+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/73",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/93",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [11, 4].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "When visualizing graphs, ensure the adjacency matrix is correctly converted to a graph structure to avoid errors in connectivity checks.",
-                        "For shortest path queries, use established library functions like `nx.shortest_path` to ensure accuracy and efficiency."
+                        "For HTML output, always verify required standard library imports (e.g., `html`, `base64`) are explicitly imported before use.",
+                        "When generating visual drafts, validate that the core logic (e.g., `nx.has_path`) is correctly applied to query nodes before finalizing the answer.",
+                        "If the task is algorithmically deterministic (like graph connectivity), rely on the computed result rather than visual inspection alone."
                     ],
-                    "notes": "The task was solved correctly, and the reasoning steps were systematic and reusable for similar graph-related problems.",
-                    "created_at": "2026-04-29T12:21:22.122889+00:00"
+                    "notes": "The run was correct, but the error pattern (missing imports) highlights a common pitfall in code generation. Future safeguards should include import validation and result validation steps.",
+                    "created_at": "2026-05-18T21:55:31.011646+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/74",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify edge presence visually or computationally before concluding.",
-                        "When using libraries like `networkx`, ensure the adjacency matrix is correctly interpreted to avoid errors in graph creation."
-                    ],
-                    "notes": "The task was solved correctly, but the insights focus on ensuring robust verification of graph properties and proper use of tools.",
-                    "created_at": "2026-04-29T12:21:40.562215+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/75",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/97",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 0 and 3. The path is [0, 5, 2, 3].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use a programmatic method like `networkx.has_path` to confirm connectivity before concluding.",
-                        "Visualizing the graph can provide an intuitive understanding of connectivity but should be supplemented with programmatic verification.",
-                        "When identifying paths in a graph, use functions like `networkx.shortest_path` to ensure accuracy and efficiency."
+                        "For HTML image embedding, always verify `base64` import before encoding",
+                        "Verify graph connectivity using `nx.has_path` before finalizing answer",
+                        "Use `print` statements to confirm intermediate file paths and summaries"
                     ],
-                    "notes": "The task was solved correctly by combining visual inspection with programmatic verification, ensuring accuracy.",
-                    "created_at": "2026-04-29T12:22:04.664967+00:00"
+                    "notes": "Task was correct but required fixing a missing import. Future tasks should enforce import checks and validate core logic before final answer.",
+                    "created_at": "2026-05-18T22:03:54.561058+00:00"
                 },
                 {
                     "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/77",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_connectivity/99",
                     "gold": true,
                     "prediction": true,
                     "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [4, 10, 0].",
+                    "final_answer": "yes",
                     "should_store": true,
                     "insights": [
-                        "For graph connectivity tasks, use a programmatic check (e.g., `networkx.has_path`) to confirm connectivity before concluding.",
-                        "When visualizing graphs, ensure the visualization is supplemented with programmatic validation to avoid misinterpretation.",
-                        "For shortest path queries, use a reliable algorithm (e.g., `networkx.shortest_path`) to provide accurate results."
+                        "For HTML image embedding, always verify required modules (like base64) are imported before use.",
+                        "After generating a draft, verify the key output (e.g., connectivity result) is correctly computed and displayed.",
+                        "If the draft contains all necessary information, terminate early without redundant steps."
                     ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic validation, ensuring accuracy.",
-                    "created_at": "2026-04-29T12:22:52.038252+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/78",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For path existence queries, verify with a reliable algorithm like `networkx.has_path` before concluding.",
-                        "When working with adjacency matrices, ensure node indices align with the graph representation to avoid misinterpretation."
-                    ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic validation, ensuring accuracy.",
-                    "created_at": "2026-04-29T12:23:27.320985+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/79",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [0, 10, 3].",
-                    "should_store": true,
-                    "insights": [
-                        "When verifying paths in graphs, use shortest path algorithms to provide additional context.",
-                        "For adjacency matrix-based graphs, ensure the matrix is correctly converted to a graph structure before analysis."
-                    ],
-                    "notes": "The task was correctly solved using a combination of visualization and programmatic methods, ensuring accuracy and clarity.",
-                    "created_at": "2026-04-29T12:24:01.004970+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/8",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between nodes 12 and 10 because they belong to different disconnected components in the graph.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify disconnected components visually and programmatically before answering.",
-                        "Use programmatic checks like `nx.has_path` to confirm connectivity claims derived from visualization.",
-                        "When using visualizations, ensure they are supplemented with computational validation to avoid misinterpretation."
-                    ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic validation, ensuring accuracy in the final answer.",
-                    "created_at": "2026-04-29T12:24:21.946769+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/80",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between node 4 and node 7.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify disconnected components visually and programmatically using `networkx.has_path`.",
-                        "When using visualizations for reasoning, confirm findings with programmatic checks to avoid misinterpretation."
-                    ],
-                    "notes": "The task was solved correctly, and the approach combined visual and programmatic validation effectively.",
-                    "created_at": "2026-04-29T12:24:53.793900+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/81",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 1 and 6. The path is [1, 4, 0, 6].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify the existence of a path programmatically before attempting to find the specific path.",
-                        "When visualizing graphs, ensure the adjacency matrix and graph structure are consistent to avoid misinterpretation.",
-                        "Use shortest path algorithms like `nx.shortest_path` to confirm and detail connections after verifying path existence."
-                    ],
-                    "notes": "The task was solved correctly, and the process included both verification and detailed pathfinding, which are good practices.",
-                    "created_at": "2026-04-29T12:25:18.714236+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/82",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between nodes 6 and 5.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify node isolation visually and programmatically before concluding.",
-                        "Use `networkx.has_path` for definitive path existence checks in graph-related queries.",
-                        "Cross-check visual observations with computational results to ensure consistency."
-                    ],
-                    "notes": "The task was solved correctly, and the approach combined visualization and programmatic validation effectively.",
-                    "created_at": "2026-04-29T12:25:47.657014+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/83",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [11, 4].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify node isolation or direct connections visually or computationally before concluding.",
-                        "When using libraries like `networkx`, ensure the adjacency matrix is correctly formatted and matches the graph structure.",
-                        "For tasks involving visualization, confirm the graph's layout and node connections visually to support computational results."
-                    ],
-                    "notes": "The task was solved correctly, and the reasoning process included both computational and visual verification, which is a robust approach.",
-                    "created_at": "2026-04-29T12:26:10.376275+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/84",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use programmatic checks (e.g., `networkx.has_path`) to verify path existence before answering.",
-                        "Visualize graphs to confirm structural insights, especially for tasks involving disconnected components."
-                    ],
-                    "notes": "The task was solved correctly using both programmatic checks and visualization, ensuring accuracy in determining graph connectivity.",
-                    "created_at": "2026-04-29T12:26:30.666962+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/85",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 7 and 8. The path is `[7, 8]`.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use programmatic methods like `networkx.has_path` to verify connections before answering.",
-                        "When determining paths in graphs, compute the shortest path programmatically to ensure accuracy."
-                    ],
-                    "notes": "The task was solved correctly using systematic programmatic checks and visualization. Insights focus on verifying connectivity and path determination using reliable methods.",
-                    "created_at": "2026-04-29T12:26:55.958595+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/86",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between nodes 8 and 4.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use programmatic checks (e.g., `networkx.has_path`) to verify connectivity before answering.",
-                        "Visualize the graph structure to confirm disconnected components or connectivity patterns when feasible."
-                    ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic verification, ensuring accuracy in determining connectivity.",
-                    "created_at": "2026-04-29T12:27:22.263708+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/87",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "Yes, there is a path between the two nodes. The path is [9, 2].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify path existence programmatically before attempting to find specific paths.",
-                        "Use visualization tools like `networkx` and `matplotlib` to confirm graph structure when working with adjacency matrices.",
-                        "For shortest path queries, use `networkx.shortest_path` to directly retrieve the path after confirming connectivity."
-                    ],
-                    "notes": "The task was solved correctly, and the process included clear steps for verifying connectivity and finding paths in a graph.",
-                    "created_at": "2026-04-29T12:27:54.107170+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/88",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify results visually and programmatically to ensure consistency.",
-                        "Use `networkx.has_path` to confirm connectivity between nodes in a graph.",
-                        "When working with adjacency matrices, ensure the graph is correctly constructed before analysis."
-                    ],
-                    "notes": "The task was solved correctly by combining visual inspection and programmatic validation, ensuring robust reasoning.",
-                    "created_at": "2026-04-29T12:28:18.798170+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/89",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [0, 8].",
-                    "should_store": true,
-                    "insights": [
-                        "When visualizing graphs, ensure the visualization step does not block or delay the main computation.",
-                        "For shortest path queries, use `networkx.shortest_path` after confirming path existence to avoid unnecessary computation."
-                    ],
-                    "notes": "The task was solved correctly, and the process was efficient. The insights focus on ensuring logical sequencing and avoiding redundant steps.",
-                    "created_at": "2026-04-29T12:28:41.842659+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/9",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [8, 6].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use a programmatic check (e.g., `nx.has_path`) to confirm the existence of a path before concluding.",
-                        "When visualizing graphs, ensure the visualization is used as a supplementary tool and not the sole basis for conclusions.",
-                        "For shortest path queries, always verify the result programmatically using reliable algorithms (e.g., `nx.shortest_path`)."
-                    ],
-                    "notes": "The task was solved correctly by combining visualization and programmatic checks, ensuring accuracy. The insights focus on maintaining rigor in graph-related tasks.",
-                    "created_at": "2026-04-29T12:29:08.317467+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/90",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify if nodes belong to the same connected component before concluding path existence.",
-                        "Use visual tools like graph plotting to confirm structural insights when analyzing complex graphs."
-                    ],
-                    "notes": "The task was solved correctly, and the use of visualization helped confirm the graph's structure and disconnected components.",
-                    "created_at": "2026-04-29T12:29:23.863420+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/91",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 7 and 2. The path is [7, 0, 3, 2].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use both visualization and programmatic checks to confirm results.",
-                        "When verifying paths in graphs, use `networkx.has_path` followed by `networkx.shortest_path` for clarity and accuracy."
-                    ],
-                    "notes": "The approach combined visual inspection with programmatic validation, ensuring correctness and providing a clear path output.",
-                    "created_at": "2026-04-29T12:29:49.477997+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/92",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify node isolation or connected components visually or programmatically before answering.",
-                        "When using libraries like `networkx`, ensure adjacency matrix accurately represents the graph structure to avoid errors.",
-                        "For tasks involving visualizations, confirm observations align with the graph's properties before concluding."
-                    ],
-                    "notes": "The task was solved correctly, and the reasoning process included visualization and verification steps that are broadly applicable to graph-related problems.",
-                    "created_at": "2026-04-29T12:30:07.875106+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/93",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "yes, there is a path. The path is [13, 0, 9].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify path existence using `networkx.has_path` before attempting to find specific paths.",
-                        "When visualizing graphs, use a layout like `spring_layout` for clear node positioning and save the visualization for reference."
-                    ],
-                    "notes": "The task was correctly solved using systematic checks for path existence and visualization. Insights focus on ensuring clarity and correctness in graph-related tasks.",
-                    "created_at": "2026-04-29T12:30:34.995318+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/94",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path between nodes 4 and 14 because they belong to different disconnected components in the graph.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify visual observations with programmatic checks to ensure accuracy.",
-                        "When using libraries like `networkx`, confirm results with built-in functions (e.g., `has_path`) to avoid reliance on manual interpretation.",
-                        "For tasks involving adjacency matrices, ensure the graph is correctly constructed before performing connectivity checks."
-                    ],
-                    "notes": "The task was solved correctly by combining visual inspection and programmatic validation, ensuring robustness in the result.",
-                    "created_at": "2026-04-29T12:31:05.817886+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/95",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 6 and 0. The path is [6, 3, 8, 4, 0].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use `nx.has_path` to verify connectivity before proceeding.",
-                        "When visualizing graphs, ensure the adjacency matrix is correctly converted to a graph structure using `networkx`.",
-                        "For pathfinding, use `nx.shortest_path` to retrieve the path once connectivity is confirmed."
-                    ],
-                    "notes": "The task was solved correctly, and the approach used reusable methods for graph analysis and visualization.",
-                    "created_at": "2026-04-29T12:31:31.566248+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/96",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path. Node 3 is isolated and not connected to any other node.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, verify node isolation by checking adjacency matrix or graph visualization.",
-                        "Use `networkx.has_path` to confirm path existence between nodes before finalizing the answer."
-                    ],
-                    "notes": "The task was solved correctly, leveraging both visualization and algorithmic checks to ensure accuracy.",
-                    "created_at": "2026-04-29T12:31:50.387739+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/97",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "yes, there is a path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use a reliable library like `networkx` to programmatically verify paths.",
-                        "When visualizing graphs, ensure the visualization aligns with programmatic checks to confirm consistency.",
-                        "For adjacency matrix-based graph tasks, convert the matrix to a graph object before performing connectivity checks."
-                    ],
-                    "notes": "The task was correctly solved using both programmatic checks and visualization, reinforcing the importance of cross-verification.",
-                    "created_at": "2026-04-29T12:32:07.989833+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/98",
-                    "gold": false,
-                    "prediction": false,
-                    "outcome": "correct",
-                    "final_answer": "no, there is no path.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use a reliable library like `networkx` to verify paths between nodes.",
-                        "When analyzing graph connectivity, confirm results by checking connected components or using path-checking functions like `has_path`.",
-                        "Visualizing the graph can help verify structural assumptions and identify potential errors in the input data."
-                    ],
-                    "notes": "The task was solved correctly using a systematic approach with a reliable library and visual verification. These practices are broadly applicable to similar tasks.",
-                    "created_at": "2026-04-29T12:32:28.558551+00:00"
-                },
-                {
-                    "task_name": "graph_connectivity",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_connectivity/99",
-                    "gold": true,
-                    "prediction": true,
-                    "outcome": "correct",
-                    "final_answer": "Yes, there is a path between nodes 7 and 8. The path is [7, 2, 8].",
-                    "should_store": true,
-                    "insights": [
-                        "For graph connectivity tasks, use both programmatic checks (e.g., `has_path`) and visual inspection to confirm results.",
-                        "When confirming connectivity, compute the exact path (e.g., using `shortest_path`) to validate and provide additional context.",
-                        "For tasks involving graph visualization, ensure the graph structure aligns with programmatic results to catch potential discrepancies."
-                    ],
-                    "notes": "The task was solved correctly by combining programmatic checks, visualization, and path computation. These steps ensure robustness in graph-related tasks.",
-                    "created_at": "2026-04-29T12:32:50.371362+00:00"
+                    "notes": "The task was correct but revealed a common oversight: missing imports. Future tasks should auto-check dependencies before execution.",
+                    "created_at": "2026-05-18T22:08:28.520786+00:00"
                 }
             ]
         },
         "graph_maxflow": {
             "entries": [
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/63",
-                    "gold": 10.0,
-                    "prediction": 10.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (2) is 10.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-based problems, visualize the graph structure and edge attributes to verify correctness before computation.",
-                        "When using algorithms like Edmonds-Karp, ensure edge capacities are explicitly assigned to avoid implicit errors."
-                    ],
-                    "notes": "The task was solved correctly, and the process included effective verification steps like graph visualization and explicit capacity assignment.",
-                    "created_at": "2026-04-29T12:25:03.726017+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/64",
-                    "gold": 13.0,
-                    "prediction": 13.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (4) is 13.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-related tasks, verify the graph structure and edge capacities before performing calculations.",
-                        "When using algorithms like Edmonds-Karp, ensure the source and sink nodes are correctly identified and mapped.",
-                        "Visualizing the graph can help confirm the setup and catch potential errors in the input data."
-                    ],
-                    "notes": "The task was solved correctly, and the process included steps that ensured accuracy, such as graph visualization and algorithm application.",
-                    "created_at": "2026-04-29T12:25:41.410314+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/65",
-                    "gold": 8.0,
-                    "prediction": 8.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (2) is 8.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-related tasks, verify edge capacities are correctly assigned before running algorithms.",
-                        "Visualizing the graph can help confirm the setup is correct before computation."
-                    ],
-                    "notes": "The task was solved correctly, and the process included steps that ensured accuracy, such as verifying edge capacities and visualizing the graph.",
-                    "created_at": "2026-04-29T12:26:06.909622+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/66",
-                    "gold": 15.0,
-                    "prediction": 15.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (3) is 15.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-based problems, ensure edge attributes like 'capacity' are correctly assigned before running algorithms.",
-                        "When visualizing graphs, confirm that labels and attributes are clearly displayed to aid interpretation.",
-                        "For computational tasks, verify algorithm outputs against expected values to ensure correctness."
-                    ],
-                    "notes": "The task was solved correctly, and the process included clear visualization and validation steps, which are reusable for similar graph-related problems.",
-                    "created_at": "2026-04-29T12:26:30.667043+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/67",
-                    "gold": 18.0,
-                    "prediction": 18.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (4) is 18.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-based tasks, verify edge capacities are correctly assigned before solving flow-related problems.",
-                        "Visualize the graph structure to confirm correctness before proceeding with computational algorithms."
-                    ],
-                    "notes": "The task was solved correctly, and the process included steps that ensured the graph was properly constructed and visualized before applying the algorithm.",
-                    "created_at": "2026-04-29T12:26:55.038583+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/68",
-                    "gold": 13.0,
-                    "prediction": 13.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (2) is 13.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-based problems, visualize the graph structure and verify edge attributes before performing computations.",
-                        "Use a well-established algorithm (e.g., Edmonds-Karp) for solving maxflow problems to ensure correctness and efficiency.",
-                        "Validate the computed results against the problem requirements to confirm they satisfy the task's constraints."
-                    ],
-                    "notes": "The task was solved correctly, and the process included effective verification steps such as graph visualization and algorithmic computation.",
-                    "created_at": "2026-04-29T12:27:18.071166+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/69",
-                    "gold": 7.0,
-                    "prediction": 7.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (2) is 7.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-based problems, verify edge capacities are correctly assigned before running algorithms.",
-                        "When using algorithms like Edmonds-Karp, confirm the source and sink nodes are correctly identified and set.",
-                        "Visualizing the graph structure can help ensure the input data is correctly interpreted."
-                    ],
-                    "notes": "The task was solved correctly, and the process included steps that ensured accuracy, such as visualizing the graph and verifying edge capacities.",
-                    "created_at": "2026-04-29T12:27:42.528634+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/7",
-                    "gold": 15.0,
-                    "prediction": 15.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value is 15.",
-                    "should_store": true,
-                    "insights": [
-                        "Visualizing the graph with edge attributes can help confirm correctness before computation."
-                    ],
-                    "notes": "The task was solved correctly, and the process included steps that ensure accuracy, such as graph visualization and proper algorithm selection.",
-                    "created_at": "2026-04-29T12:28:10.616316+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/70",
-                    "gold": 9.0,
-                    "prediction": 9.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (2) is 9.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-based problems, visualize the graph structure and edge attributes to confirm correctness before computation.",
-                        "For maxflow problems, use a reliable algorithm like Edmonds-Karp and verify the flow distribution to ensure consistency with the computed maximum flow value."
-                    ],
-                    "notes": "The task was solved correctly, and the process included useful verification steps like graph visualization and algorithmic validation.",
-                    "created_at": "2026-04-29T12:28:35.038710+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/71",
-                    "gold": 16.0,
-                    "prediction": 16.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (4) is 16.",
-                    "should_store": true,
-                    "insights": [
-                        "For graph-related tasks, verify the graph structure and edge capacities visually before performing calculations.",
-                        "For maximum flow problems, ensure the algorithm (e.g., Edmonds-Karp) is applied to a correctly constructed graph with proper source and sink nodes.",
-                        "When using libraries like `networkx`, confirm that edge attributes (e.g., capacities) are correctly assigned before running algorithms."
-                    ],
-                    "notes": "The task was solved correctly, and the process included visual verification of the graph structure and proper application of the Edmonds-Karp algorithm.",
-                    "created_at": "2026-04-29T12:28:56.588399+00:00"
-                },
-                {
-                    "task_name": "graph_maxflow",
-                    "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/72",
-                    "gold": 9.0,
-                    "prediction": 9.0,
-                    "outcome": "correct",
-                    "final_answer": "The maximum flow value from the source node (0) to the sink node (2) is 9.",
-                    "should_store": true,
-                    "insights": [
-                        "When using algorithms like Edmonds-Karp, ensure the graph structure and capacity attributes align with the algorithm's requirements.",
-                        "Visualizing the graph with edge capacities can help confirm the setup before running computational algorithms."
-                    ],
-                    "notes": "The task was solved correctly, and the process included steps to verify the graph structure and capacities, which contributed to the correct outcome.",
-                    "created_at": "2026-04-29T12:29:21.880576+00:00"
-                },
                 {
                     "task_name": "graph_maxflow",
                     "task_input": "/Users/cjn/Desktop/个人/Project/SelfEvo-reason/VisualSketchpad-main/tasks/graph_maxflow/73",
@@ -1907,6 +1754,182 @@
                     ],
                     "notes": "The task was solved correctly, and the process included steps that ensured accuracy, such as visualization and validation of edge attributes.",
                     "created_at": "2026-04-29T12:45:50.986999+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/10",
+                    "gold": 16.0,
+                    "prediction": 16.0,
+                    "outcome": "correct",
+                    "final_answer": "16.",
+                    "should_store": true,
+                    "insights": [
+                        "For maxflow tasks, verify edge capacities are positive before running algorithms.",
+                        "Always validate algorithm output against expected constraints or manual calculation.",
+                        "Use visualization as a debugging step to confirm graph structure before computation."
+                    ],
+                    "notes": "The task was correct, but the insights focus on preventing common pitfalls in future maxflow tasks.",
+                    "created_at": "2026-05-15T03:11:03.868721+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/106",
+                    "gold": 21.0,
+                    "prediction": 21.0,
+                    "outcome": "correct",
+                    "final_answer": "21.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph-based flow problems, verify source/sink nodes and edge capacities visually before computing flow.",
+                        "Use `nx.maximum_flow_value` with explicit capacity attribute to ensure correct algorithm input.",
+                        "Always confirm final answer matches expected format (e.g., include decimal point if required)."
+                    ],
+                    "notes": "The run was correct but included a formatting oversight in the final answer (missing trailing zero or decimal point in '21' vs '21.').",
+                    "created_at": "2026-05-15T03:41:04.266293+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/109",
+                    "gold": 14.0,
+                    "prediction": 14.0,
+                    "outcome": "correct",
+                    "final_answer": "14.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph-based maxflow tasks, verify edge capacities are correctly mapped before computation.",
+                        "Always validate algorithm output against known constraints or visualizations before finalizing.",
+                        "Use explicit variable naming (e.g., `source_node`, `sink_node`) to avoid confusion in multi-step reasoning."
+                    ],
+                    "notes": "The run was correct, but the insights focus on preventing future errors in graph setup, validation, and clarity in variable usage.",
+                    "created_at": "2026-05-15T03:47:18.585659+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/111",
+                    "gold": 16.0,
+                    "prediction": 16.0,
+                    "outcome": "correct",
+                    "final_answer": "16.",
+                    "should_store": true,
+                    "insights": [
+                        "For maxflow tasks, verify edge capacities are correctly assigned before running the algorithm.",
+                        "Use visualization to confirm source/sink nodes and graph structure before computation.",
+                        "Validate algorithm output against expected constraints (e.g., sum of inflows/outflows) if available."
+                    ],
+                    "notes": "The solution was correct and efficient. No errors were found, but the insights generalize best practices for future maxflow tasks.",
+                    "created_at": "2026-05-15T03:55:57.412919+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/110",
+                    "gold": 12.0,
+                    "prediction": 12.0,
+                    "outcome": "correct",
+                    "final_answer": "12.",
+                    "should_store": true,
+                    "insights": [
+                        "For maxflow tasks, verify graph structure and edge capacities visually before running algorithm",
+                        "Use networkx's built-in maxflow function with 'capacity' keyword for reliable results",
+                        "Always confirm final answer matches computed value before terminating"
+                    ],
+                    "notes": "Task was correct; no mistakes found. Insights focus on verification and reliability safeguards.",
+                    "created_at": "2026-05-15T03:57:11.594789+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/113",
+                    "gold": 12.0,
+                    "prediction": 12.0,
+                    "outcome": "correct",
+                    "final_answer": "12.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph-based flow problems, verify edge capacities are correctly mapped to graph edges before computation.",
+                        "Always confirm source and sink nodes are correctly identified before running maxflow algorithms.",
+                        "Use library-specific functions (e.g., `maximum_flow_value`) with explicit capacity attribute names to avoid misconfiguration."
+                    ],
+                    "notes": "Task was correct; no mistakes to correct. Insights focus on preventing common configuration errors in future graph flow tasks.",
+                    "created_at": "2026-05-15T04:00:38.854816+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/112",
+                    "gold": 17.0,
+                    "prediction": 17.0,
+                    "outcome": "correct",
+                    "final_answer": "17.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph-based flow problems, verify edge capacities are correctly assigned before computing flow.",
+                        "Cross-validate flow results using both `maximum_flow_value` and `maximum_flow` to ensure correctness.",
+                        "Finalize answer only after confirming flow distribution matches graph constraints."
+                    ],
+                    "notes": "The task was correct, but the process highlights a pattern of defensive verification that can be generalized to other graph problems.",
+                    "created_at": "2026-05-15T04:02:01.657191+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/115",
+                    "gold": 10.0,
+                    "prediction": 10.0,
+                    "outcome": "correct",
+                    "final_answer": "10.",
+                    "should_store": true,
+                    "insights": [
+                        "For maxflow tasks, verify source/sink nodes and edge capacities visually before computation.",
+                        "Always cross-check computed flow with bottleneck analysis to validate result.",
+                        "Use networkx's `maximum_flow_value` with explicit capacity attribute for reliable results."
+                    ],
+                    "notes": "The run was correct; insights focus on verification and validation steps to prevent future errors.",
+                    "created_at": "2026-05-15T04:10:32.584121+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/120",
+                    "gold": 10.0,
+                    "prediction": 10.0,
+                    "outcome": "correct",
+                    "final_answer": "10.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph flow tasks, verify source/sink nodes are correctly identified before computing flow.",
+                        "When using networkx, confirm edge capacities are properly assigned before running max flow.",
+                        "Always validate final answer against expected format (e.g., include decimal point if required)."
+                    ],
+                    "notes": "Task was correct; insights focus on preventing common setup or formatting errors in future runs.",
+                    "created_at": "2026-05-15T04:24:15.751183+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/120",
+                    "gold": 10.0,
+                    "prediction": 10.0,
+                    "outcome": "correct",
+                    "final_answer": "10.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph-based flow problems, verify source/sink nodes and edge capacities visually before computation.",
+                        "Use built-in library functions (e.g., `networkx.maximum_flow_value`) for reliability when edge attributes are correctly assigned.",
+                        "Finalize answer only after confirming consistency between visual, computational, and expected results."
+                    ],
+                    "notes": "Task was correct; insights focus on verification and reliability patterns for future graph flow tasks.",
+                    "created_at": "2026-05-15T04:30:49.810157+00:00"
+                },
+                {
+                    "task_name": "graph_maxflow",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_maxflow/123",
+                    "gold": 17.0,
+                    "prediction": 17.0,
+                    "outcome": "correct",
+                    "final_answer": "17.",
+                    "should_store": true,
+                    "insights": [
+                        "For graph-based flow problems, verify edge capacities are correctly assigned from the adjacency matrix before computing flow.",
+                        "Always validate the source and sink nodes match the problem constraints before finalizing the answer.",
+                        "Use visualization to confirm graph structure and edge attributes when debugging or verifying intermediate steps."
+                    ],
+                    "notes": "The run was correct and efficient. No mistakes were made, but the insights are generalized for future graph-flow tasks.",
+                    "created_at": "2026-05-15T04:39:14.368287+00:00"
                 }
             ]
         },
@@ -2171,6 +2194,38 @@
                     ],
                     "notes": "The task was solved correctly by leveraging visual inspection and structural analysis of the graphs. The approach was efficient and avoided unnecessary computation.",
                     "created_at": "2026-04-29T14:45:34.771583+00:00"
+                },
+                {
+                    "task_name": "graph_isomorphism",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_isomorphism/100",
+                    "gold": true,
+                    "prediction": true,
+                    "outcome": "correct",
+                    "final_answer": "true.",
+                    "should_store": true,
+                    "insights": [
+                        "For empty graphs, verify node count matches before concluding isomorphism.",
+                        "Always record reasoning in JSON draft at step 0 for traceability.",
+                        "For trivial cases, confirm edge and node attributes match explicitly."
+                    ],
+                    "notes": "The run was correct, but reinforcing verification steps for edge/node counts and documentation practices will improve robustness in edge cases.",
+                    "created_at": "2026-05-18T15:21:17.894685+00:00"
+                },
+                {
+                    "task_name": "graph_isomorphism",
+                    "task_input": "/home/yuehe/cjn/html-sketch/tasks/graph_isomorphism/1",
+                    "gold": false,
+                    "prediction": false,
+                    "outcome": "correct",
+                    "final_answer": "false",
+                    "should_store": true,
+                    "insights": [
+                        "For graph isomorphism, verify degree sequences match before proceeding to complex checks.",
+                        "Always explicitly import required modules (e.g., `html`) before using their functions.",
+                        "If degree sequences differ, graphs are not isomorphic — terminate early to save computation."
+                    ],
+                    "notes": "The task was solved correctly after fixing a missing import. The key insight is that degree sequence mismatch is sufficient to conclude non-isomorphism, allowing early termination.",
+                    "created_at": "2026-05-18T22:13:59.402085+00:00"
                 }
             ]
         },

@@ -143,6 +143,13 @@ def main():
     parser.add_argument("--local-model", type=str, default=None, help="Local model override.")
     parser.add_argument("--local-dtype", type=str, default=None, help="Local model dtype (auto/fp16/bf16/fp32).")
     parser.add_argument("--device-map", type=str, default=None, help="Device map for the local backend.")
+    parser.add_argument(
+        "--draft-format",
+        type=str,
+        default=None,
+        choices=["html", "json"],
+        help="Optional intermediate draft format for standard task types.",
+    )
     args = parser.parse_args()
 
     task_names = resolve_tasks(args.task)
@@ -154,8 +161,11 @@ def main():
         "local_model": args.local_model,
         "local_dtype": args.local_dtype,
         "device_map": args.device_map,
+        "draft_format": args.draft_format,
     }
     scoped_output_root = get_runtime_output_root(args.output_dir, runtime_kwargs=runtime_kwargs)
+    if args.draft_format:
+        scoped_output_root = scoped_output_root / f"draft_{args.draft_format}"
     summaries = run_tasks(
         task_names,
         str(scoped_output_root),

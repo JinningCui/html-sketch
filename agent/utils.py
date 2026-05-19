@@ -57,10 +57,30 @@ def extract_code_block(text):
     return None
 
 
+def _strip_code_blocks(text):
+    return re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+
+
+def _looks_like_placeholder_answer(text):
+    candidate = text.strip()
+    return any(
+        re.fullmatch(pattern, candidate)
+        for pattern in [
+            r"\{[^{}]+\}",
+            r"<[^<>]+>",
+            r"\[[^\[\]]+\]",
+        ]
+    )
+
+
 def extract_answer_text(text):
-    matches = re.findall(r"ANSWER:\s*(.*?)(?:TERMINATE|$)", text, flags=re.DOTALL)
+    text_wo_code = _strip_code_blocks(text)
+    matches = re.findall(r"ANSWER:\s*(.*?)(?:TERMINATE|$)", text_wo_code, flags=re.DOTALL)
     if matches:
-        return matches[-1].strip()
+        for match in reversed(matches):
+            candidate = match.strip()
+            if candidate and not _looks_like_placeholder_answer(candidate):
+                return candidate
     return None
 
 

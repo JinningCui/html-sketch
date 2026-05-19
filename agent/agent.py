@@ -20,6 +20,15 @@ class SketchpadUserAgent(MultimodalUserProxyAgent):
     def sender_hits_max_reply(self, sender: Agent):
         return self._consecutive_auto_reply_counter[sender.name] >= self._max_consecutive_auto_reply
 
+    def _contains_terminate(self, message: Union[Dict, str]) -> bool:
+        if self._is_termination_msg(message):
+            return True
+        if isinstance(message, dict):
+            content = message.get("content", "")
+        else:
+            content = message
+        return isinstance(content, str) and "ANSWER:" in content and "TERMINATE" in content
+
     def receive(
         self,
         message: Union[Dict, str],
@@ -43,7 +52,7 @@ class SketchpadUserAgent(MultimodalUserProxyAgent):
         parsed_error_code = parsed_results['error_code']
         
         # if TERMINATION message, then return
-        if not parsed_status and self._is_termination_msg(message):
+        if not parsed_status and self._contains_terminate(message):
             return
         
         # if parsing fails
@@ -81,6 +90,9 @@ class SketchpadUserAgent(MultimodalUserProxyAgent):
                 
             # if execution succeeds
             else:
+                if self._contains_terminate(message) or ("ANSWER:" in output and "TERMINATE" in output):
+                    self._consecutive_auto_reply_counter[sender.name] = 0
+                    return
                 self.send(reply, sender, request_reply=True)
                 self._consecutive_auto_reply_counter[sender.name] = 0
                 return
