@@ -85,10 +85,10 @@ def _looks_like_placeholder_answer(text):
 
 def extract_answer_text(text):
     text_wo_code = _strip_code_blocks(text)
-    matches = re.findall(r"\bANSWER\s*:\s*(.*?)(?:\bTERMINATE\b|$)", text_wo_code, flags=re.DOTALL | re.IGNORECASE)
+    matches = re.findall(r"\bANSWER\s*:\s*(.*?)\bTERMINATE\b", text_wo_code, flags=re.DOTALL | re.IGNORECASE)
     if matches:
         for match in reversed(matches):
-            candidate = re.sub(r"\s+", " ", match).strip()
+            candidate = re.sub(r"\s+", " ", match).strip().strip("`")
             if candidate and not _looks_like_placeholder_answer(candidate):
                 return candidate
     return None
@@ -164,7 +164,7 @@ def build_structured_trace(messages):
             break
 
     return {
-        "status": "ok",
+        "status": "ok" if final_answer else "incomplete",
         "messages": simple_messages,
         "turns": turns,
         "final_answer": final_answer,

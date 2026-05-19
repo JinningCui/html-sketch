@@ -40,6 +40,8 @@ HTML draft contract:
 - Use HTML's stronger expressive power when useful: tables, CSS layout, inline SVG, diagrams, boards, arrows, overlays, charts, and image references.
 - Print exactly: HTML_DRAFT_PATH: <path> and HTML_DRAFT_SUMMARY: <short summary>.
 Never include `ANSWER:` or `TERMINATE` inside the Python code block; the final answer must be normal text outside code.
+If a Python ACTION computes the final value, print the value for inspection, then in the same assistant message after the code block write `ANSWER: <that concrete value> TERMINATE`.
+Do not mention the literal token `ANSWER:` in REFLECTION/THOUGHT unless you are actually giving the final answer.
 Never use placeholder final answers such as `{answer}`, `{final_answer}`, `<answer>`, or `[answer]`. The final answer must be a concrete label/value required by the task, such as `yes`, `no`, `(A)`, `128`, or `white`.
 
 Use local revision rather than regenerating the whole plan when the previous draft only needs a focused fix.
@@ -66,6 +68,8 @@ JSON draft contract:
 - Print exactly: JSON_DRAFT_PATH: <path> and JSON_DRAFT_SUMMARY: <short summary>.
 Do not put raw text like `JSON_DRAFT_PATH: ...` or `JSON_DRAFT_SUMMARY: ...` inside the code block unless it is inside a Python print(...) call.
 Never include `ANSWER:` or `TERMINATE` inside the Python code block; the final answer must be normal text outside code.
+If a Python ACTION computes the final value, print the value for inspection, then in the same assistant message after the code block write `ANSWER: <that concrete value> TERMINATE`.
+Do not mention the literal token `ANSWER:` in REFLECTION/THOUGHT unless you are actually giving the final answer.
 Never use placeholder final answers such as `{answer}`, `{final_answer}`, `<answer>`, or `[answer]`. The final answer must be a concrete label/value required by the task, such as `yes`, `no`, `(A)`, `128`, or `white`.
 
 Use local revision rather than regenerating the whole plan when the previous draft only needs a focused fix.
